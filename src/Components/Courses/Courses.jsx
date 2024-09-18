@@ -1,16 +1,15 @@
 import PropTypes from "prop-types";
 import Course from "../Course/Course";
 
-const Courses = ({ courses, handleCourseDetail,handleCount }) => {
+const Courses = ({ courses, handleCourseDetail }) => {
   // console.log(courses);
   return (
-    <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-5 justify-center items-center">
+    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-5 justify-center items-center">
       {courses.map((course, idx) => (
         <Course
           key={idx}
           course={course}
           handleCourseDetail={handleCourseDetail}
-          handleCount={handleCount}
         ></Course>
       ))}
     </div>
@@ -19,8 +18,7 @@ const Courses = ({ courses, handleCourseDetail,handleCount }) => {
 
 Courses.propTypes = {
   courses: PropTypes.array,
-  handleCourseDetail: PropTypes.func,
-  handleCount: PropTypes.func
+  handleCourseDetail: PropTypes.func
 };
 
 export default Courses;
